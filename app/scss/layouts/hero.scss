@@ -63,8 +63,9 @@
 
   &-slider-buttons {
     position: absolute;
-    top: calc(21.7% + 50vw);
+    top: 0;
     right: 0;
+    margin-top: calc(260px + 50vw - 68px); // height slide minus height slider buttons
     display: flex;
   }
 }

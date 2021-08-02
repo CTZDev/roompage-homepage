@@ -168,7 +168,7 @@ picture {
   width: 100%;
   height: 2px;
   margin: 4px 0;
-  background-color: red;
+  background-color: var(--background-color);
   transition: all 0.15s ease-out;
 }
 .menu-hamburguer.is-active::before {
@@ -243,9 +243,32 @@ picture {
 }
 .hero-slider-buttons {
   position: absolute;
-  top: calc(21.7% + 50vw);
+  top: 0;
   right: 0;
+  margin-top: calc(260px + 50vw - 68px);
   display: flex;
+}
+
+@media only screen and (min-width: 40em) {
+  .about-furniture {
+    flex-direction: row;
+  }
+}
+.about-furniture-image > img {
+  width: 100%;
+}
+.about-furniture-content {
+  padding: 3.75rem 1.5rem;
+}
+.about-furniture-content > h3 {
+  text-transform: uppercase;
+  letter-spacing: 0.3125rem;
+  font-size: 1.1em;
+  margin-bottom: 1rem;
+}
+.about-furniture-content > p {
+  color: var(--text-color);
+  line-height: 1.7;
 }
 
 /*# sourceMappingURL=style.css.map */

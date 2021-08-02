@@ -1,0 +1,29 @@
+@use "../util" as *;
+
+.about-furniture {
+  @include mq(small) {
+    flex-direction: row;
+  }
+
+  &-image {
+    & > img {
+      width: 100%;
+    }
+  }
+
+  &-content {
+    padding: rem(60) rem(24);
+
+    & > h3 {
+      text-transform: uppercase;
+      letter-spacing: rem(5);
+      font-size: 1.1em;
+      margin-bottom: rem(16);
+    }
+
+    & > p {
+      color: var(--text-color);
+      line-height: 1.7;
+    }
+  }
+}
