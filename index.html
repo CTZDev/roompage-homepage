@@ -11,14 +11,17 @@
   </head>
   <body>
     <header class="main-header">
-      <nav class="navigation">
-        <ul class="menu">
+      <nav class="navigation flex flex-ai-c flex-jc-sb">
+        <div class="menu-hamburguer">
+          <span class="bar"></span>
+        </div>
+        <ul class="menu flex flex-ai-c">
           <li class="menu-item"><a href="#" class="menu-link">Home</a></li>
           <li class="menu-item"><a href="#" class="menu-link">Shop</a></li>
           <li class="menu-item"><a href="#" class="menu-link">About</a></li>
           <li class="menu-item"><a href="#" class="menu-link">Contact</a></li>
         </ul>
-        <a href="#">
+        <a href="#" class="brand">
           <img src="./images/logo.svg" alt="Logo" loading="lazy" />
         </a>
       </nav>
@@ -29,17 +32,17 @@
           <div class="hero-slider">
             <article class="slide">
               <picture class="slide-img">
-                <source media="(min-width: 768px)" srcset="./images/desktop-image-hero-1.jpg" loading="lazy" />
+                <source media="(min-width: 640px)" srcset="./images/desktop-image-hero-1.jpg" loading="lazy" />
                 <img src="./images/mobile-image-hero-1.jpg" alt="Desk with plants on the table" loading="lazy" />
               </picture>
-              <div class="slide-content">
+              <div class="slide-content wrapper">
                 <h2>Discover innovative ways to decorate</h2>
                 <p>
                   We provide unmatched quality, comfort, and style for property owners across the country. Our experts combine form and function in
                   bringing your vision to life. Create a room in your own style with our collection and make your property a reflection of you and
                   what you love.
                 </p>
-                <a>
+                <a class="slide-button flex flex-ai-c">
                   <span>Shop now</span>
                   <img src="./images/icon-arrow.svg" alt="Come in the Shop" />
                 </a>
@@ -47,17 +50,17 @@
             </article>
             <article class="slide">
               <picture class="slide-img">
-                <source media="(min-width: 768px)" srcset="./images/desktop-image-hero-2.jpg" loading="lazy" />
+                <source media="(min-width: 640px)" srcset="./images/desktop-image-hero-2.jpg" loading="lazy" />
                 <img src="./images/mobile-image-hero-2.jpg" alt="Furnitures with variables colors" loading="lazy" />
               </picture>
-              <div class="slide-content">
+              <div class="slide-content wrapper">
                 <h2>We are available all across the globe</h2>
                 <p>
                   With stores all over the world, it's easy for you to find furniture for your home or place of business. Locally, we’re in most major
                   cities throughout the country. Find the branch nearest you using our store locator. Any questions? Don't hesitate to contact us
                   today.
                 </p>
-                <a>
+                <a class="slide-button flex flex-ai-c">
                   <span>Shop now</span>
                   <img src="./images/icon-arrow.svg" alt="Come in the Shop" />
                 </a>
@@ -65,38 +68,38 @@
             </article>
             <article class="slide">
               <picture class="slide-img">
-                <source media="(min-width: 768px)" srcset="./images/desktop-image-hero-3.jpg" loading="lazy" />
+                <source media="(min-width: 640px)" srcset="./images/desktop-image-hero-3.jpg" loading="lazy" />
                 <img src="./images/mobile-image-hero-3.jpg" alt="Furniture with black color" loading="lazy" />
               </picture>
-              <div class="slide-content">
+              <div class="slide-content wrapper">
                 <h2>Manufactured with the best materials</h2>
                 <p>
                   Our modern furniture store provide a high level of quality. Our company has invested in advanced technology to ensure that every
                   product is made as perfect and as consistent as possible. With three decades of experience in this industry, we understand what
                   customers want for their home and office.
                 </p>
-                <a>
+                <a class="slide-button flex flex-ai-c">
                   <span>Shop now</span>
                   <img src="./images/icon-arrow.svg" alt="Come in the Shop" loading="lazy" />
                 </a>
               </div>
             </article>
-          </div>
-          <div class="hero-buttons">
-            <button class="btn">
-              <img src="./images/icon-angle-left.svg" alt="Previous" loading="lazy" />
-            </button>
-            <button class="btn">
-              <img src="./images/icon-angle-right.svg" alt="Next" loading="lazy" />
-            </button>
+            <div class="hero-slider-buttons">
+              <button class="btn">
+                <img src="./images/icon-angle-left.svg" alt="Previous" loading="lazy" />
+              </button>
+              <button class="btn">
+                <img src="./images/icon-angle-right.svg" alt="Next" loading="lazy" />
+              </button>
+            </div>
           </div>
         </div>
       </section>
       <section class="about-furniture">
-        <figure class="about-furniture">
+        <figure class="about-furniture-image">
           <img src="./images/image-about-dark.jpg" alt="Furniture Dark" loading="lazy" />
         </figure>
-        <div class="about-furniture-content">
+        <div class="about-furniture-content wrapper">
           <h3>About our furniture</h3>
           <p>
             Our multifunctional collection blends design and function to suit your individual taste. Make each room unique, or pick a cohesive theme
@@ -104,7 +107,7 @@
             anything in between. Product specialists are available to help you create your dream space.
           </p>
         </div>
-        <figure class="about-furniture">
+        <figure class="about-furniture-image">
           <img src="./images/image-about-light.jpg" alt="Furniture Light" loading="lazy" />
         </figure>
       </section>

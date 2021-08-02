@@ -1,0 +1,15 @@
+@use "../util" as *;
+
+.btn {
+  display: inline-block;
+  padding: rem(22);
+  text-align: center;
+  background-color: var(--title-color);
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  & > img {
+    pointer-events: none;
+  }
+}

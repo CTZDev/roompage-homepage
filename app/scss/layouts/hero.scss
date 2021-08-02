@@ -1,0 +1,70 @@
+@use "../util" as *;
+
+.hero {
+  margin-top: rem(-114);
+
+  &-slider {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 100%);
+    // transform: translateX(-100%);
+
+    &-container {
+      overflow: hidden;
+    }
+
+    & .slide {
+      display: flex;
+      flex-direction: column;
+
+      @include mq(small) {
+        flex-direction: row;
+      }
+
+      &-img {
+        :is(img, source) {
+          width: 100%;
+          height: calc(260px + 50vw);
+        }
+      }
+
+      &-content {
+        padding-top: rem(72);
+        padding-bottom: rem(72);
+
+        & > h2 {
+          font-weight: bold;
+          font-size: rem(26);
+          line-height: 1.2;
+          padding-bottom: rem(16);
+        }
+
+        & > p {
+          color: var(--text-color);
+          line-height: 1.7;
+          padding-bottom: rem(52);
+        }
+      }
+
+      &-button {
+        width: fit-content;
+        font-size: 1.2em;
+        cursor: pointer;
+
+        & > span {
+          letter-spacing: 8px;
+          text-transform: uppercase;
+          margin-right: rem(32);
+          margin-bottom: rem(-3);
+        }
+      }
+    }
+  }
+
+  &-slider-buttons {
+    position: absolute;
+    top: calc(21.7% + 50vw);
+    right: 0;
+    display: flex;
+  }
+}
