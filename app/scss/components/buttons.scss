@@ -8,6 +8,7 @@
   border: none;
   outline: none;
   cursor: pointer;
+  transition: background-color 300ms ease-in-out;
 
   @include mq(medium) {
     padding: rem(28) rem(33);
@@ -16,6 +17,10 @@
   @include mq(large) {
     padding-left: calc(5.5% + 0.2vw);
     padding-right: calc(5.5% + 0.2vw);
+  }
+
+  &:hover {
+    background-color: var(--active-color);
   }
 
   & > img {

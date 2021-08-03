@@ -23,7 +23,7 @@
   --background-color: white;
   --text-color: #a1a1a1;
   --title-color: black;
-  --active-color: #a1a1a1;
+  --active-color: #454545;
   --font-family: "Spartan", sans-serif;
   --fz-sm: 12px;
   --fz-md: 14px;
@@ -160,6 +160,7 @@ picture {
   border: none;
   outline: none;
   cursor: pointer;
+  transition: background-color 300ms ease-in-out;
 }
 @media only screen and (min-width: 64em) {
   .btn {
@@ -171,6 +172,9 @@ picture {
     padding-left: calc(5.5% + 0.2vw);
     padding-right: calc(5.5% + 0.2vw);
   }
+}
+.btn:hover {
+  background-color: var(--active-color);
 }
 .btn > img {
   pointer-events: none;
@@ -198,11 +202,6 @@ picture {
 .navigation.open {
   background-color: var(--background-color);
 }
-.navigation.open .menu {
-  display: flex;
-  align-items: center;
-  order: 1;
-}
 .navigation.open .brand {
   display: none;
 }
@@ -215,12 +214,27 @@ picture {
 }
 
 .menu {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0;
+  max-width: 0;
+  display: flex;
+  align-items: center;
+  transition: opacity 250ms ease-in, max-height 250ms ease-in;
+}
+.menu.open {
+  order: 1;
+  opacity: 1;
+  visibility: visible;
+  max-height: 15.625rem;
+  max-width: fit-content;
 }
 @media only screen and (min-width: 64em) {
   .menu {
-    display: flex;
-    align-items: center;
+    opacity: 1;
+    visibility: visible;
+    max-height: 15.625rem;
+    max-width: fit-content;
     order: 1;
   }
 }
@@ -232,12 +246,28 @@ picture {
   display: block;
   color: var(--title-color);
   font-weight: bold;
+  position: relative;
 }
 @media only screen and (min-width: 64em) {
   .menu-link {
     color: var(--background-color);
     font-weight: normal;
     font-size: 1.1em;
+  }
+  .menu-link::before {
+    content: "";
+    position: absolute;
+    top: 120%;
+    width: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 0;
+    background-color: var(--background-color);
+    border-radius: 6px;
+    transition: height 200ms ease-in;
+  }
+  .menu-link:hover::before, .menu-link:focus::before {
+    height: 4px;
   }
 }
 .menu-hamburguer {
@@ -381,6 +411,10 @@ picture {
   width: fit-content;
   font-size: 1.2em;
   cursor: pointer;
+  transition: opacity 200ms ease-in-out;
+}
+.hero-slider .slide-button:hover, .hero-slider .slide-button:focus {
+  opacity: 0.6;
 }
 .hero-slider .slide-button > span {
   letter-spacing: 8px;

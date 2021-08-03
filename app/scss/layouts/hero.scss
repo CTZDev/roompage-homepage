@@ -86,6 +86,11 @@
         width: fit-content;
         font-size: 1.2em;
         cursor: pointer;
+        transition: opacity 200ms ease-in-out;
+        &:hover,
+        &:focus {
+          opacity: 0.6;
+        }
 
         & > span {
           letter-spacing: 8px;

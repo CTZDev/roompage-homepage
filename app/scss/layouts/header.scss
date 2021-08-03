@@ -22,12 +22,6 @@
   &.open {
     background-color: var(--background-color);
 
-    & .menu {
-      display: flex;
-      align-items: center;
-      order: 1;
-    }
-
     & .brand {
       display: none;
     }
@@ -41,11 +35,27 @@
 }
 
 .menu {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0;
+  max-width: 0;
+  display: flex;
+  align-items: center;
+  transition: opacity 250ms ease-in, max-height 250ms ease-in;
+
+  &.open {
+    order: 1;
+    opacity: 1;
+    visibility: visible;
+    max-height: rem(250);
+    max-width: fit-content;
+  }
 
   @include mq(medium) {
-    display: flex;
-    align-items: center;
+    opacity: 1;
+    visibility: visible;
+    max-height: rem(250);
+    max-width: fit-content;
     order: 1;
   }
 
@@ -60,11 +70,32 @@
     display: block;
     color: var(--title-color);
     font-weight: bold;
+    position: relative;
 
     @include mq(medium) {
       color: var(--background-color);
       font-weight: normal;
       font-size: 1.1em;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 120%;
+        width: 25px;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 0;
+        background-color: var(--background-color);
+        border-radius: 6px;
+        transition: height 200ms ease-in;
+      }
+
+      &:hover,
+      &:focus {
+        &::before {
+          height: 4px;
+        }
+      }
     }
   }
 

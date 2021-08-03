@@ -2,8 +2,8 @@ const d = document;
 
 const hamburguerMenu = () => {
   const $hamburguer = d.querySelector(".menu-hamburguer");
-  //First fade-in and last fade-out
-  const $hasFadeElements = d.querySelectorAll(".has-fade");
+  const $overlay = d.querySelector(".overlay");
+  const $menuHeader = d.querySelector(".menu");
   const $navigation = d.querySelector(".navigation");
 
   d.addEventListener("click", (e) => {
@@ -12,32 +12,31 @@ const hamburguerMenu = () => {
         $hamburguer.classList.remove("is-active");
         d.body.classList.remove("no-scroll");
         $navigation.classList.remove("open");
-        //Applied for elements first "fade-in" last "fade-out"
-        $hasFadeElements.forEach((el) => {
-          el.classList.remove("fade-in");
-          el.classList.add("fade-out");
-        });
+        $menuHeader.classList.remove("open");
+        $overlay.classList.remove("fade-in");
+        $overlay.classList.add("fade-out");
       } else {
         $hamburguer.classList.add("is-active");
         d.body.classList.add("no-scroll");
         $navigation.classList.add("open");
-        //Applied for elements first "fade-in" last "fade-out"
-        $hasFadeElements.forEach((el) => {
-          el.classList.add("fade-in");
-          el.classList.remove("fade-out");
-        });
+        $menuHeader.classList.add("open");
+        $overlay.classList.add("fade-in");
+        $overlay.classList.remove("fade-out");
       }
     }
 
     if (e.target.matches(".menu-link")) {
       $hamburguer.classList.remove("is-active");
       $navigation.classList.remove("open");
+      $menuHeader.classList.remove("open");
       d.body.classList.remove("no-scroll");
-      $hasFadeElements.forEach((el) => {
-        el.classList.remove("fade-in");
-        el.classList.add("fade-out");
-        setTimeout(() => el.classList.remove("fade-out"), 500);
-      });
+
+      let screenWidth = window.innerWidth || d.documentElement.clientWidth;
+      if (screenWidth < 1024) {
+        $overlay.classList.remove("fade-in");
+        $overlay.classList.add("fade-out");
+        setTimeout(() => $overlay.classList.remove("fade-out"), 350);
+      }
     }
   });
 };
