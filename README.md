@@ -1,6 +1,6 @@
 # Frontend Mentor - Room homepage
 
-![Design preview for the Room homepage coding challenge](./design/desktop-preview.jpg)
+![Design preview for the Room homepage coding challenge](https://repository-images.githubusercontent.com/391530565/55d644c7-c107-4262-9b94-6f405211c933)
 
 ## Welcome! 👋
 
