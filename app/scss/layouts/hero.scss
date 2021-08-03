@@ -11,7 +11,8 @@
     position: relative;
     display: grid;
     grid-template-columns: repeat(3, 100%);
-    // transform: translateX(-100%);
+    transform: translateX(0);
+    will-change: transform;
 
     &-container {
       overflow: hidden;

@@ -5,8 +5,41 @@
   z-index: 1;
 }
 
+.overlay {
+  position: fixed;
+  top: rem(114);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  visibility: hidden;
+  background: rgba(black, 0.5);
+}
+
 .navigation {
   padding: rem(46) rem(24);
+
+  & .menu {
+    display: none;
+  }
+
+  & .brand {
+    display: block;
+  }
+
+  &.open {
+    background-color: var(--background-color);
+
+    & .menu {
+      display: flex;
+      align-items: center;
+      order: 1;
+    }
+
+    & .brand {
+      display: none;
+    }
+  }
 
   @include mq(medium) {
     justify-content: flex-start;
@@ -16,8 +49,6 @@
 }
 
 .menu {
-  display: none;
-
   @include mq(medium) {
     display: flex;
     align-items: center;
@@ -49,6 +80,7 @@
     width: 1.4rem;
     cursor: pointer;
     user-select: none;
+    -webkit-tap-highlight-color: rgba(black, 0);
     transition: all 0.4s ease-in;
 
     @include mq(medium) {
@@ -74,10 +106,12 @@
     }
 
     &.is-active::before {
+      background-color: var(--active-color);
       transform: rotate(45deg) translate(5px, 4px);
     }
 
     &.is-active::after {
+      background-color: var(--active-color);
       transform: rotate(-45deg) translate(5px, -5px);
     }
 

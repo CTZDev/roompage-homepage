@@ -1,4 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@500;600;700&display=swap");
+@keyframes fadeIn {
+  from {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@keyframes fadeOut {
+  from {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+  }
+  to {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+  }
+}
 :root {
   --background-color: white;
   --text-color: #a1a1a1;
@@ -31,6 +55,9 @@ body {
   min-height: 100vh;
   font-size: var(--fz-sm);
   text-rendering: optimizeSpeed;
+}
+body.no-scroll {
+  overflow: hidden;
 }
 @media only screen and (min-width: 48em) {
   body {
@@ -106,6 +133,14 @@ picture {
   display: none;
 }
 
+.fade-in {
+  animation: fadeIn 400ms ease-in-out forwards;
+}
+
+.fade-out {
+  animation: fadeOut 400ms ease-in-out forwards;
+}
+
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -150,8 +185,36 @@ picture {
   z-index: 1;
 }
 
+.overlay {
+  position: fixed;
+  top: 7.125rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  visibility: hidden;
+  background: rgba(0, 0, 0, 0.5);
+}
+
 .navigation {
   padding: 2.875rem 1.5rem;
+}
+.navigation .menu {
+  display: none;
+}
+.navigation .brand {
+  display: block;
+}
+.navigation.open {
+  background-color: var(--background-color);
+}
+.navigation.open .menu {
+  display: flex;
+  align-items: center;
+  order: 1;
+}
+.navigation.open .brand {
+  display: none;
 }
 @media only screen and (min-width: 64em) {
   .navigation {
@@ -161,9 +224,6 @@ picture {
   }
 }
 
-.menu {
-  display: none;
-}
 @media only screen and (min-width: 64em) {
   .menu {
     display: flex;
@@ -193,6 +253,7 @@ picture {
   width: 1.4rem;
   cursor: pointer;
   user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   transition: all 0.4s ease-in;
 }
 @media only screen and (min-width: 64em) {
@@ -214,9 +275,11 @@ picture {
   transition: all 0.15s ease-out;
 }
 .menu-hamburguer.is-active::before {
+  background-color: var(--active-color);
   transform: rotate(45deg) translate(5px, 4px);
 }
 .menu-hamburguer.is-active::after {
+  background-color: var(--active-color);
   transform: rotate(-45deg) translate(5px, -5px);
 }
 .menu-hamburguer.is-active > .bar {
@@ -250,6 +313,8 @@ picture {
   position: relative;
   display: grid;
   grid-template-columns: repeat(3, 100%);
+  transform: translateX(0);
+  will-change: transform;
 }
 .hero-slider-container {
   overflow: hidden;

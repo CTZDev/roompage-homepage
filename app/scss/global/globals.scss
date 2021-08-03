@@ -23,6 +23,10 @@ body {
   font-size: var(--fz-sm);
   text-rendering: optimizeSpeed;
 
+  &.no-scroll {
+    overflow: hidden;
+  }
+
   @include mq(small) {
     font-size: var(--fz-md);
   }
@@ -96,6 +100,14 @@ picture {
 
 .none {
   display: none;
+}
+
+.fade-in {
+  animation: fadeIn 400ms ease-in-out forwards;
+}
+
+.fade-out {
+  animation: fadeOut 400ms ease-in-out forwards;
 }
 
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
