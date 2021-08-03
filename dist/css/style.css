@@ -303,7 +303,7 @@ picture {
 }
 .menu-hamburguer.is-active::after {
   background-color: var(--active-color);
-  transform: rotate(-45deg) translate(5px, -5px);
+  transform: rotate(-45deg) translate(4px, -4px);
 }
 .menu-hamburguer.is-active > .bar {
   opacity: 0;
