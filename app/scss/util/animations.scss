@@ -1,11 +1,9 @@
 @keyframes fadeIn {
   from {
-    display: none;
     opacity: 0;
     visibility: hidden;
   }
   to {
-    display: block;
     opacity: 1;
     visibility: visible;
   }
@@ -13,12 +11,10 @@
 
 @keyframes fadeOut {
   from {
-    display: block;
     opacity: 1;
     visibility: visible;
   }
   to {
-    display: none;
     opacity: 0;
     visibility: hidden;
   }

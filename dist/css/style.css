@@ -1,24 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@500;600;700&display=swap");
 @keyframes fadeIn {
   from {
-    display: none;
     opacity: 0;
     visibility: hidden;
   }
   to {
-    display: block;
     opacity: 1;
     visibility: visible;
   }
 }
 @keyframes fadeOut {
   from {
-    display: block;
     opacity: 1;
     visibility: visible;
   }
   to {
-    display: none;
     opacity: 0;
     visibility: hidden;
   }
@@ -199,12 +195,6 @@ picture {
 .navigation {
   padding: 2.875rem 1.5rem;
 }
-.navigation .menu {
-  display: none;
-}
-.navigation .brand {
-  display: block;
-}
 .navigation.open {
   background-color: var(--background-color);
 }
@@ -224,6 +214,9 @@ picture {
   }
 }
 
+.menu {
+  display: none;
+}
 @media only screen and (min-width: 64em) {
   .menu {
     display: flex;
@@ -310,13 +303,13 @@ picture {
   }
 }
 .hero-slider {
-  position: relative;
   display: grid;
   grid-template-columns: repeat(3, 100%);
-  transform: translateX(0);
   will-change: transform;
+  transition: transform 550ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }
 .hero-slider-container {
+  position: relative;
   overflow: hidden;
 }
 .hero-slider .slide {
@@ -372,6 +365,12 @@ picture {
   font-size: 1.625rem;
   line-height: 1.2;
   padding-bottom: 1rem;
+}
+@media only screen and (min-width: 90em) {
+  .hero-slider .slide-content > h2 {
+    font-size: 2rem;
+    padding-bottom: 2rem;
+  }
 }
 .hero-slider .slide-content > p {
   color: var(--text-color);

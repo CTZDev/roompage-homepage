@@ -19,14 +19,6 @@
 .navigation {
   padding: rem(46) rem(24);
 
-  & .menu {
-    display: none;
-  }
-
-  & .brand {
-    display: block;
-  }
-
   &.open {
     background-color: var(--background-color);
 
@@ -49,6 +41,8 @@
 }
 
 .menu {
+  display: none;
+
   @include mq(medium) {
     display: flex;
     align-items: center;

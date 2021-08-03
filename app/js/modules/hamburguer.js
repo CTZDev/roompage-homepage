@@ -4,7 +4,6 @@ const hamburguerMenu = () => {
   const $hamburguer = d.querySelector(".menu-hamburguer");
   //First fade-in and last fade-out
   const $hasFadeElements = d.querySelectorAll(".has-fade");
-  const $menuLinks = d.querySelectorAll(".menu-link");
   const $navigation = d.querySelector(".navigation");
 
   d.addEventListener("click", (e) => {
@@ -37,6 +36,7 @@ const hamburguerMenu = () => {
       $hasFadeElements.forEach((el) => {
         el.classList.remove("fade-in");
         el.classList.add("fade-out");
+        setTimeout(() => el.classList.remove("fade-out"), 500);
       });
     }
   });
