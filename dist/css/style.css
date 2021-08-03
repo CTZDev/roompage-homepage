@@ -7,7 +7,6 @@
   --font-family: "Spartan", sans-serif;
   --fz-sm: 12px;
   --fz-md: 14px;
-  --fz-lg: 16px;
 }
 
 html {
@@ -33,7 +32,7 @@ body {
   font-size: var(--fz-sm);
   text-rendering: optimizeSpeed;
 }
-@media only screen and (min-width: 40em) {
+@media only screen and (min-width: 48em) {
   body {
     font-size: var(--fz-md);
   }
@@ -96,6 +95,12 @@ picture {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
 }
+@media only screen and (min-width: 48em) {
+  .wrapper {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
 
 .none {
   display: none;
@@ -125,6 +130,17 @@ picture {
   outline: none;
   cursor: pointer;
 }
+@media only screen and (min-width: 64em) {
+  .btn {
+    padding: 1.75rem 2.0625rem;
+  }
+}
+@media only screen and (min-width: 90em) {
+  .btn {
+    padding-left: calc(5.5% + 0.2vw);
+    padding-right: calc(5.5% + 0.2vw);
+  }
+}
 .btn > img {
   pointer-events: none;
 }
@@ -137,9 +153,23 @@ picture {
 .navigation {
   padding: 2.875rem 1.5rem;
 }
+@media only screen and (min-width: 64em) {
+  .navigation {
+    justify-content: flex-start;
+    gap: 4rem;
+    padding: 4rem;
+  }
+}
 
 .menu {
   display: none;
+}
+@media only screen and (min-width: 64em) {
+  .menu {
+    display: flex;
+    align-items: center;
+    order: 1;
+  }
 }
 .menu-item:not(:last-child) {
   margin-right: 1.625rem;
@@ -150,6 +180,13 @@ picture {
   color: var(--title-color);
   font-weight: bold;
 }
+@media only screen and (min-width: 64em) {
+  .menu-link {
+    color: var(--background-color);
+    font-weight: normal;
+    font-size: 1.1em;
+  }
+}
 .menu-hamburguer {
   display: block;
   background-color: transparent;
@@ -157,6 +194,11 @@ picture {
   cursor: pointer;
   user-select: none;
   transition: all 0.4s ease-in;
+}
+@media only screen and (min-width: 64em) {
+  .menu-hamburguer {
+    display: none;
+  }
 }
 .menu-hamburguer::before, .menu-hamburguer::after {
   content: "";
@@ -190,9 +232,19 @@ picture {
 .brand {
   margin-right: calc(50% - 37px);
 }
+@media only screen and (min-width: 64em) {
+  .brand {
+    margin-right: initial;
+  }
+}
 
 .hero {
   margin-top: -7.125rem;
+}
+@media only screen and (min-width: 64em) {
+  .hero {
+    margin-top: -9.25rem;
+  }
 }
 .hero-slider {
   position: relative;
@@ -206,18 +258,49 @@ picture {
   display: flex;
   flex-direction: column;
 }
-@media only screen and (min-width: 40em) {
+@media only screen and (min-width: 64em) {
   .hero-slider .slide {
     flex-direction: row;
+    height: calc(412px + 10vw);
   }
 }
-.hero-slider .slide-img :is(img, source) {
+.hero-slider .slide-img > img {
+  height: calc(260px + 26vw);
   width: 100%;
-  height: calc(260px + 50vw);
+}
+@media only screen and (min-width: 64em) {
+  .hero-slider .slide-img > img {
+    height: calc(412px + 10vw);
+  }
+}
+@media only screen and (min-width: 64em) {
+  .hero-slider .slide-img {
+    flex-basis: 55%;
+  }
+}
+@media only screen and (min-width: 90em) {
+  .hero-slider .slide-img {
+    flex-basis: 60%;
+  }
 }
 .hero-slider .slide-content {
   padding-top: 4.5rem;
   padding-bottom: 4.5rem;
+}
+@media only screen and (min-width: 64em) {
+  .hero-slider .slide-content {
+    flex-basis: 45%;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 7.5rem;
+  }
+}
+@media only screen and (min-width: 90em) {
+  .hero-slider .slide-content {
+    flex-basis: 40%;
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
 }
 .hero-slider .slide-content > h2 {
   font-weight: bold;
@@ -245,20 +328,59 @@ picture {
   position: absolute;
   top: 0;
   right: 0;
-  margin-top: calc(260px + 50vw - 68px);
+  margin-top: calc(260px + 26vw - 68px);
   display: flex;
 }
-
-@media only screen and (min-width: 40em) {
-  .about-furniture {
-    flex-direction: row;
+@media only screen and (min-width: 64em) {
+  .hero-slider-buttons {
+    margin-top: calc(412px + 10vw - 80px);
+    left: 55%;
   }
+}
+@media only screen and (min-width: 90em) {
+  .hero-slider-buttons {
+    left: 60%;
+  }
+}
+
+.about-furniture {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+@media only screen and (min-width: 48em) {
+  .about-furniture {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (min-width: 90em) {
+  .about-furniture {
+    grid-template-columns: 1fr 1.45fr 1fr;
+    align-items: center;
+  }
+}
+.about-furniture-image {
+  height: 100%;
 }
 .about-furniture-image > img {
   width: 100%;
+  height: 100%;
 }
 .about-furniture-content {
   padding: 3.75rem 1.5rem;
+  height: 100%;
+}
+@media only screen and (min-width: 48em) {
+  .about-furniture-content {
+    padding: 3.75rem 3rem;
+    order: 1;
+    grid-column: 1/-1;
+  }
+}
+@media only screen and (min-width: 90em) {
+  .about-furniture-content {
+    order: initial;
+    grid-column: initial;
+  }
 }
 .about-furniture-content > h3 {
   text-transform: uppercase;

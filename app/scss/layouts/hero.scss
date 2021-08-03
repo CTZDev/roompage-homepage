@@ -3,6 +3,10 @@
 .hero {
   margin-top: rem(-114);
 
+  @include mq(medium) {
+    margin-top: rem(-148);
+  }
+
   &-slider {
     position: relative;
     display: grid;
@@ -17,20 +21,46 @@
       display: flex;
       flex-direction: column;
 
-      @include mq(small) {
+      @include mq(medium) {
         flex-direction: row;
+        height: calc(412px + 10vw);
       }
 
       &-img {
-        :is(img, source) {
+        & > img {
+          height: calc(260px + 26vw);
           width: 100%;
-          height: calc(260px + 50vw);
+
+          @include mq(medium) {
+            height: calc(412px + 10vw);
+          }
+        }
+
+        @include mq(medium) {
+          flex-basis: 55%;
+        }
+
+        @include mq(large) {
+          flex-basis: 60%;
         }
       }
 
       &-content {
         padding-top: rem(72);
         padding-bottom: rem(72);
+
+        @include mq(medium) {
+          flex-basis: 45%;
+          padding-left: rem(48);
+          padding-right: rem(48);
+          padding-top: rem(120);
+        }
+
+        @include mq(large) {
+          flex-basis: 40%;
+          padding-left: rem(96);
+          padding-right: rem(96);
+        }
 
         & > h2 {
           font-weight: bold;
@@ -65,7 +95,16 @@
     position: absolute;
     top: 0;
     right: 0;
-    margin-top: calc(260px + 50vw - 68px); // height slide minus height slider buttons
+    margin-top: calc(260px + 26vw - 68px); // height slide minus height slider buttons
     display: flex;
+
+    @include mq(medium) {
+      margin-top: calc(412px + 10vw - 80px);
+      left: 55%;
+    }
+
+    @include mq(large) {
+      left: 60%;
+    }
   }
 }

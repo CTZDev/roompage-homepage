@@ -87,6 +87,11 @@ picture {
 .wrapper {
   padding-left: rem(20);
   padding-right: rem(20);
+
+  @include mq(small) {
+    padding-left: rem(48);
+    padding-right: rem(48);
+  }
 }
 
 .none {

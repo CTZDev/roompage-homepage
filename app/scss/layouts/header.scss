@@ -7,10 +7,22 @@
 
 .navigation {
   padding: rem(46) rem(24);
+
+  @include mq(medium) {
+    justify-content: flex-start;
+    gap: rem(64);
+    padding: rem(64);
+  }
 }
 
 .menu {
   display: none;
+
+  @include mq(medium) {
+    display: flex;
+    align-items: center;
+    order: 1;
+  }
 
   &-item {
     &:not(:last-child) {
@@ -23,6 +35,12 @@
     display: block;
     color: var(--title-color);
     font-weight: bold;
+
+    @include mq(medium) {
+      color: var(--background-color);
+      font-weight: normal;
+      font-size: 1.1em;
+    }
   }
 
   &-hamburguer {
@@ -32,6 +50,10 @@
     cursor: pointer;
     user-select: none;
     transition: all 0.4s ease-in;
+
+    @include mq(medium) {
+      display: none;
+    }
 
     &::before,
     &::after {
@@ -72,5 +94,8 @@
 
 .brand {
   margin-right: calc(50% - 37px); // 48px (padding) - 11px (mitad haumburguer)
-  // display: none;
+
+  @include mq(medium) {
+    margin-right: initial;
+  }
 }

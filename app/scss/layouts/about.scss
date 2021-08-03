@@ -1,18 +1,41 @@
 @use "../util" as *;
 
 .about-furniture {
+  display: grid;
+  grid-template-columns: 1fr;
+
   @include mq(small) {
-    flex-direction: row;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mq(large) {
+    grid-template-columns: 1fr 1.45fr 1fr;
+    align-items: center;
   }
 
   &-image {
+    height: 100%;
+
     & > img {
       width: 100%;
+      height: 100%;
     }
   }
 
   &-content {
     padding: rem(60) rem(24);
+    height: 100%;
+
+    @include mq(small) {
+      padding: rem(60) rem(48);
+      order: 1;
+      grid-column: 1 / -1;
+    }
+
+    @include mq(large) {
+      order: initial;
+      grid-column: initial;
+    }
 
     & > h3 {
       text-transform: uppercase;

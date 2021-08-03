@@ -9,6 +9,15 @@
   outline: none;
   cursor: pointer;
 
+  @include mq(medium) {
+    padding: rem(28) rem(33);
+  }
+
+  @include mq(large) {
+    padding-left: calc(5.5% + 0.2vw);
+    padding-right: calc(5.5% + 0.2vw);
+  }
+
   & > img {
     pointer-events: none;
   }
